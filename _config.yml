@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: idreamshen
+title: idreamshen's blog
 subtitle:
 description:
 author: idreamshen
@@ -71,3 +71,6 @@ deploy:
   type: git
   repo: https://github.com/idreamshen/idreamshen.com.git
   branch: master
+
+duoshuo_shortname: idreamshen
+baidu_analytics: 1ec95f84e9094c65f2a900760137f6c5

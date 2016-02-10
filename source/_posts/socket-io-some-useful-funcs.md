@@ -75,3 +75,32 @@ io.use(function (socket, next) {
   }
 });
 ```
+### ACK 模式
+```javascript
+// 服务端
+var io = require('socket.io')();
+
+io.on('connection', function (socket) {
+  socket.on('chat', function (msg, callback) {
+    callback({
+      success: true
+    });
+    io.emit('chat', msg);
+  });
+});
+```
+```javascript
+// 客户端
+<script>
+  var socket = io();
+  socket.on('connect', function () {
+    socket.emit('chat', 'Hello', function (response) {
+      console.log(response.success); // 打印结果为 true
+    });
+
+    socket.on('chat', function (response) {
+      console.log(response); // 打印结果为 Hello
+    });
+  });
+</script>
+```
